@@ -45,6 +45,7 @@ let
   makeMicroarch = lvl: with final;
     if stdenv.hostPlatform.isx86 then import "${nixpkgs}"
       {
+        config.allowUnfree = true;
         overlays = [
           selfOverlay
           (_final': prev': {
